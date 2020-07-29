@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router'
 
-export default function (props) {
+export default function ListLayout(props) {
     return (
         <div>
             <div>
@@ -15,10 +16,14 @@ export default function (props) {
             <div>
                 <h2>Browse my work...</h2>
                 <span>
-                    <button>By experience</button>
-                    <button>By category</button>
-                    <button>By skills</button>
+                    <Link to="/experiences">By experience</Link>
+                    <Link to="/categories">By category</Link>
+                    <Link to="/skills">By skills</Link>
                 </span>
+            </div>
+
+            <div>
+                {props.children}
             </div>
 
         </div>

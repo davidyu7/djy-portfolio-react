@@ -1,10 +1,13 @@
 // React and router boilerplate
 import React from 'react';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
 // styling things
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+
+// Main Layout
+import MainLayout from "./MainLayout"
 
 // List components
 import ListLayout from './lists/Layout'
@@ -23,20 +26,20 @@ class App extends React.Component {
   render(){
     return(
       <Router history={browserHistory}>
+        <Route component={MainLayout}>
+          <Route component={ListLayout}>
+            <Route path="/" component={Folders} />
+            <Route path="/experiences" component={Folders} />
+            <Route path="/categories" component={Categories} />
+            <Route path="/skills" component={Tags} />
+          </Route>
 
-        <Route component={ListLayout}>
-          <Route path="/" component={Folders} />
-          <Route path="experiences" component={Folders} />
-          <Route path="categories" component={Categories} />
-          <Route path="skills" component={Tags} />
+          {/* <Route component={StaticLayout}>
+            <Route path="projects/:id" component={Project} />
+            <Route path="resume" component={Resume} />
+            <Route path="contact" component={Contact} />
+          </Route> */}
         </Route>
-
-        <Route component={StaticLayout}>
-          <Route path="projects/:id" component={Project} />
-          <Route path="resume" component={Resume} />
-          <Route path="contact" component={Contact} />
-        </Route>
-
       </Router>
 
     )
