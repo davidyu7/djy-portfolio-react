@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ProjectPreview from '../project/Preview.js';
+import ProjectPreview from '../project/Preview';
 import { Route, Switch, NavLink, useParams } from 'react-router-dom'
 
 const API_URL = "http://localhost:3000"
@@ -46,9 +46,7 @@ export default function Tags(props) {
                     )}
                 </div>
                 <div className="row project-list">
-                <Switch>
                     <Route path="/projects/tags/:id" component={Tag} />
-                </Switch>
                 </div>
             </div>
         );
@@ -85,7 +83,7 @@ function Tag(props){
     } else {
         return (
             tag.project_previews.map(project =>
-                <div className="col-6">
+                <div className="col-6" key={project.id}>
                     <ProjectPreview project={project} key={project.id}/>
                 </div>
             )

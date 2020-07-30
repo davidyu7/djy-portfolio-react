@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ProjectPreview from '../project/Preview.js'
+import ProjectPreview from '../project/Preview'
 
 const API_URL = "http://localhost:3000"
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ProjectPreview from '../project/Preview.js';
+import ProjectPreview from '../project/Preview';
 import { Route, Switch, NavLink, useParams } from 'react-router-dom'
 
 const API_URL = "http://localhost:3000"
@@ -41,7 +41,7 @@ export default function Categories(props) {
                             activeClassName="active"
                             key={category.id}
                         >
-                            {`#${category.name}`}
+                            {category.name}
                         </NavLink>
                     )}
                 </div>
@@ -85,7 +85,7 @@ function Category(props){
     } else {
         return (
             category.project_previews.map(project =>
-                <div className="col-6">
+                <div className="col-6" key={project.id}>
                     <ProjectPreview project={project} key={project.id}/>
                 </div>
             )

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import './App.css';
 
 // Main Layouts
+import NavBar from './NavBar'
 import ListLayout from './lists/Layout'
 import StaticLayout from './static/Layout'
 
@@ -14,18 +15,19 @@ import StaticLayout from './static/Layout'
 
 // Static components
 import Project from './project/Project'
-import Resume from './static/Resume'
-import Contact from './static/Contact'
 
 class App extends React.Component {
 
   render(){
     return(
       <BrowserRouter>
+        <NavBar />
         <div className="container">
           <Switch>
               <Route path= "/projects" component={ListLayout} />
-              <Route path= "/static" component={StaticLayout} />
+              <Route path= "/resume" component={StaticLayout} />
+              <Route path= "/about" component={StaticLayout} />
+              <Route path= "/contact" component={StaticLayout} />
               <Route path= "/">
                 <Redirect to="/projects/experiences" />
               </Route>
