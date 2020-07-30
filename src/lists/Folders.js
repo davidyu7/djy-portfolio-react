@@ -9,6 +9,8 @@ export default function Folders(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [folders, setFolders] = useState([]);
 
+
+    
     useEffect(() => {
         console.log(`${API_URL}/folders`)
         fetch(`${API_URL}/folders`)
@@ -32,7 +34,7 @@ export default function Folders(props) {
     } else {
         return (
             <div>
-                {folders.map(folder => <FolderContainer folder={folder} />)}
+                {folders.map(folder => <FolderContainer folder={folder} key={folder.id}/>)}
             </div>
         );
     }
@@ -50,7 +52,7 @@ function FolderContainer(props) {
                     <p>{folder.description}</p>
                 </div>
                 <div className="col">
-                    {folder.project_previews.map(preview => <ProjectPreview project={preview} />)}
+                    {folder.project_previews.map(project=> <ProjectPreview project={project} key={project.id}/>)}
                 </div>
             </div>
             <hr/>

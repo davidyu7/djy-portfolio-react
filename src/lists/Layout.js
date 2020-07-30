@@ -1,5 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Route, Switch, NavLink } from 'react-router-dom'
+
+import Folders from './Folders'
+import Categories from './Categories'
+import Tags from './Tags'
 
 export default function ListLayout(props) {
     return (
@@ -16,15 +20,17 @@ export default function ListLayout(props) {
             <div>
                 <h2>Browse my work...</h2>
                 <span>
-                    <Link to="/experiences">By experience</Link>
-                    <Link to="/categories">By category</Link>
-                    <Link to="/skills">By skills</Link>
+                    <NavLink to="/projects/experiences" activeClassName="active">By experience</NavLink>
+                    <NavLink to="/projects/categories" activeClassName="active">By category</NavLink>
+                    <NavLink to="/projects/tags" activeClassName="active">By tags</NavLink>
                 </span>
             </div>
 
-            <div>
-                {props.children}
-            </div>
+            <Switch>
+                <Route path="/projects/experiences" component={Folders} />
+                <Route path="/projects/categories" component={Categories} />
+                <Route path="/projects/tags" component={Tags}/>
+            </Switch>
 
         </div>
     )
