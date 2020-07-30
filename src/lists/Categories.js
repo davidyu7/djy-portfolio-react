@@ -34,7 +34,16 @@ export default function Categories(props) {
         return (
             <div>
                 <div className="category-list">
-                    {categories.map(category => <NavLink to={`/projects/categories/${category.id}`} className="category" activeClassName="active">{`#${category.name}`}</NavLink>)}
+                    {categories.map(category =>
+                        <NavLink
+                            to={`/projects/categories/${category.id}`} 
+                            className="category" 
+                            activeClassName="active"
+                            key={category.id}
+                        >
+                            {`#${category.name}`}
+                        </NavLink>
+                    )}
                 </div>
                 <div className="row project-list">
                 <Switch>

@@ -34,7 +34,16 @@ export default function Tags(props) {
         return (
             <div>
                 <div className="tag-list">
-                    {tags.map(tag => <NavLink to={`/projects/tags/${tag.id}`} className="tag" activeClassName="active">{`#${tag.name}`}</NavLink>)}
+                    {tags.map(tag =>
+                        <NavLink
+                            to={`/projects/tags/${tag.id}`}
+                            className="tag"
+                            activeClassName="active"
+                            key={tag.id}
+                        >
+                            {`#${tag.name}`}
+                        </NavLink>
+                    )}
                 </div>
                 <div className="row project-list">
                 <Switch>
