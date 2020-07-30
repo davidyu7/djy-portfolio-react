@@ -1,5 +1,10 @@
+hr {
+    border-width: 3px;
+    border-color: black;
+}
+
 .big-hello {
-    font-size: 4em;
+    font-size: 6em;
     font-weight: bold;
 }
 
@@ -9,7 +14,7 @@
 }
 
 #intro-header {
-    margin-top: 10%;
+    margin-top: 10em;
     margin-left: 0;
     margin-bottom: 5%
 }

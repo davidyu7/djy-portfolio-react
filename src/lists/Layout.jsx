@@ -7,12 +7,14 @@ import Tags from './Tags'
 
 import './Layout.css'
 
+import ProfilePic from './profile.JPG'
+
 export default function ListLayout(props) {
     return (
         <div>
             <div className="row" id="intro-header">
                 <div className="col-3" id="intro-header-headshot">
-                    <img id="headshot" src="https://newmedia.ufm.edu/wp-content/uploads/2019/11/djm-2.jpg"></img>
+                    <img id="headshot" src={ProfilePic}></img>
                 </div>
                 <div className="col-9" id="intro-header-text">
                     <h1 className="big-hello">Hello!</h1>

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'
+import { Route, Link, useParams } from 'react-router-dom';
+
+import ProjectForm from './ProjectForm'
+import ImageForm from './ImageForm'
 
 import './Project.css';
 
@@ -10,7 +13,8 @@ export default function Project(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [project, setProject] = useState({});
-    const [comments, setComments] = useState({});
+    const [comments, setComments] = useState([]);
+    const [images, setImages] = useState([]);
 
     let { id } = useParams()
 
@@ -21,7 +25,9 @@ export default function Project(props) {
         .then(
             (result) => {
                 setProject(result);
+                console.log(result);
                 setComments(result.comments);
+                setImages(result.images);
               setIsLoaded(true);
             },
             (error) => {
@@ -43,22 +49,31 @@ export default function Project(props) {
                         <h1 className="project-title">{project.title}</h1>
                     </div>
                 </div>
+
                 <div className="project-details">
-                    <h3>Description:</h3>
-                    <p>{project.description}</p>
-                    <h3>Tagged:</h3>
-                    <div className="tag-list">
+                    <h4>{project.description}</h4>
+
+                    <span className="tag-list">
+                        <h2 style={{display: 'inline'}}>Tags: </h2>
                         {project.tags.map(tag =>
                             <Link to={`/projects/tags/${tag.id}`} className="tag" key={tag.id}>{`#${tag.name}`}</Link>
-                        )}
-                    </div>
+                        )}                       
+                    </span>
                 </div>
+
+                <div className="row main-content-list">
+                    {images.map(image => 
+                        <Image image={image} key={image.id} />
+                    )}
+                </div>
+
                 <div className="project-comments-area">
                     <h3>Comments:</h3>
+
                     <form id="comment-form" onSubmit={handleComment}>
                         <div className="form-row">
                             <div className="form-group col-md 12">
-                                <textarea className="form-control" id="commentText" aria-label="Leave a comment" rows="3" placeholder = "Leave your thoughts..."></textarea>
+                                <textarea className="form-control" id="commentText" aria-label="Leave a comment" rows="3" placeholder = "Share your thoughts..."></textarea>
                             </div>
                         </div>
                         <div className="form-row">
@@ -73,10 +88,14 @@ export default function Project(props) {
                             </div>
                         </div>
                     </form>
+
                     <div className="comments-list">
-                        {comments.map(comment => <Comment comment={comment} />)}
+                        {comments.map(comment => <Comment comment={comment} key={comment.id}/>)}
                     </div>
-                </div>    
+                </div>
+
+                <Route path={`/project/${project.id}/edit`} render={(props) => <ProjectForm {...props} project={project} setProject={setProject} />} />
+                <Route path={`/project/${project.id}/addimage`} render={(props) => <ImageForm {...props} project={project} setImages={setImages} />} />
             </div>
         )
     }
@@ -102,14 +121,25 @@ export default function Project(props) {
     }
 }
 
+function Image(props) {
+    const { image } = props
+
+    return(
+        <div className="col-6 thumbnail-container">
+            <div className="row image-thumbnail" style={{backgroundImage: `url('${image.src_url}')`}}>
+            </div>
+        </div>
+    )
+}
 function Comment(props) {
 
     const { comment } = props
 
     return(
         <div>
-            <h1>{comment.display_name}</h1>
-            <p>{comment.content}</p>
+            <p>On {comment.created_at.slice(0, 10)}, <b>{comment.display_name}</b> said:</p>
+            <h5>{comment.content}</h5>
+            <hr className="comment-separator" />
         </div>
     )
 }

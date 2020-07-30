@@ -2,13 +2,15 @@
   text-align: center;
 }
 
-hr {
-  border-width: 3px;
-  border-color: black;
-}
 /* default link color is gray */
 a {
   color: gray;
+}
+
+.navbar-brand {
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .main-content-list {

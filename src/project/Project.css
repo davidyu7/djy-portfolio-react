@@ -20,6 +20,32 @@
     font-weight: bold;
 }
 
+.project-details{
+    margin-top: 2em;
+}
+
+.tag-list{
+    margin-top: 2em;
+}
+
+.thumbnail-container{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.image-thumbnail{
+    margin: 0;
+    width: 100%;
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    position: relative;
+}
+
+.project-comments-area{
+    margin-top: 2em;
+}
+
 .form-control{
     border: 2px solid gray;
     border-radius: 0px;
@@ -38,4 +64,17 @@
 
 .form-button:active{
     background-color: gray;
+}
+
+.modal-content{
+    padding: 5% 10%;
+}
+
+.modal-dialog{
+    max-width: 50%;
+}
+
+.comment-separator{
+    border-width: 1px;
+    border-color: gray;
 }
