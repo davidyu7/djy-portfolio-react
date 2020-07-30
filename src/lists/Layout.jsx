@@ -26,11 +26,11 @@ export default function ListLayout(props) {
 
             <div>
                 <h2>Browse my work by...</h2>
-                <span>
-                    <NavLink to="/projects/experiences" className="nav-3" activeClassName="active">experience</NavLink>
-                    <NavLink to="/projects/categories" className="nav-3" activeClassName="active">category</NavLink>
-                    <NavLink to="/projects/tags" className="nav-3" activeClassName="active">tags</NavLink>
-                </span>
+                <div className="nav-3">
+                    <NavLink to="/projects/experiences" className="nav-3-item" activeClassName="active">Experience</NavLink>
+                    <NavLink to="/projects/categories" className="nav-3-item" activeClassName="active">Category</NavLink>
+                    <NavLink to="/projects/tags" className="nav-3-item" activeClassName="active">Tags</NavLink>
+                </div>
             </div>
 
             <Switch>

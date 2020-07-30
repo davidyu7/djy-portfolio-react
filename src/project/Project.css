@@ -8,11 +8,34 @@
 }
 
 .project-title-box{
-    padding: 0.5em 1em;
+    padding: 0.5em 1em 0.4em;
     background-color: white;
     position: absolute;
     bottom: 30px;
     left: 30px;
-    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.5);
     text-align: left;
+}
+
+.project-title{
+    font-weight: bold;
+}
+
+.form-control{
+    border: 2px solid gray;
+    border-radius: 0px;
+}
+
+.form-control:focus {
+    outline: none !important;
+    border:2px solid black;
+    box-shadow: none;
+}
+
+.form-button:hover{
+    border: 2px solid black;
+    color: black;
+}
+
+.form-button:active{
+    background-color: gray;
 }

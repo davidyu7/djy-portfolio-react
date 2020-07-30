@@ -12,7 +12,7 @@ a {
 }
 
 .main-content-list {
-  margin-top: 2em;
+  margin-top: 2.5em;
 }
 
 /* makes links black when highlighted, removes underline */
@@ -29,31 +29,34 @@ a:hover {
 
 /* secondary navigation */
 .nav-2 {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 /* tertiary navigation */
-.nav-3 {
-  font-size: 1.75em;
+.nav-3{
+  margin-top: 1em;
+}
+.nav-3-item {
+  font-size: 2em;
   margin-right: 1em;
 }
 
 /* settings for tags */
 .tag {
-  font-size: 1.75em;
+  font-size: 2em;
   margin-right: 1em;
 }
 
 .tag-list{
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 
 /* settings for categories */
 .category {
-  font-size: 2.25em;
+  font-size: 2em;
   margin-right: 1.5em;
 }
 
 .category-list{
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
