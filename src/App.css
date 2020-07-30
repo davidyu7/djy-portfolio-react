@@ -2,9 +2,17 @@
   text-align: center;
 }
 
+hr {
+  border-width: 3px;
+  border-color: black;
+}
 /* default link color is gray */
 a {
   color: gray;
+}
+
+.main-content-list {
+  margin-top: 2em;
 }
 
 /* makes links black when highlighted, removes underline */
@@ -17,4 +25,35 @@ a:hover {
 .active {
   color: black;
   border-bottom: 2px solid black;
+}
+
+/* secondary navigation */
+.nav-2 {
+  font-size: 1.5em;
+}
+
+/* tertiary navigation */
+.nav-3 {
+  font-size: 1.75em;
+  margin-right: 1em;
+}
+
+/* settings for tags */
+.tag {
+  font-size: 1.75em;
+  margin-right: 1em;
+}
+
+.tag-list{
+  margin-top: 0.5em;
+}
+
+/* settings for categories */
+.category {
+  font-size: 2.25em;
+  margin-right: 1.5em;
+}
+
+.category-list{
+  margin-top: 0.5em;
 }

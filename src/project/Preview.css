@@ -1,0 +1,36 @@
+.preview-title {
+    font-size: 1.75em;
+    font-weight: bold;
+    color: white;
+}
+
+.preview-description {
+    color: white;
+    margin-top: 0.6em;
+}
+
+.preview-container {
+    margin: 0 0 2em 0;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 15%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    position: relative;
+}
+
+.preview-overlay {
+    position: absolute; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.1); /* Black background with opacity */
+}
+
+.on-top {
+    z-index:10;
+}

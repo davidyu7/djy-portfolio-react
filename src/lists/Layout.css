@@ -1,0 +1,22 @@
+.big-hello {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+#intro-header-text {
+    padding-left: 3em;
+    bottom: 0
+}
+
+#intro-header {
+    margin-top: 10%;
+    margin-left: 0;
+    margin-bottom: 5%
+}
+
+#headshot {
+    max-width:100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

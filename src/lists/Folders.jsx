@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ProjectPreview from '../project/Preview'
 
+import './Folders.css'
+
 const API_URL = "http://localhost:3000"
 
 export default function Folders(props) {
@@ -33,7 +35,7 @@ export default function Folders(props) {
         return <div>Loading...</div>;
     } else {
         return (
-            <div>
+            <div className="main-content-list">
                 {folders.map(folder => <FolderContainer folder={folder} key={folder.id}/>)}
             </div>
         );
@@ -48,7 +50,7 @@ function FolderContainer(props) {
         <>
             <div className="row">
                 <div className="col">
-                    <h1>{folder.name}</h1>
+                    <div className="folder-title">{folder.name}</div>
                     <p>{folder.description}</p>
                 </div>
                 <div className="col">

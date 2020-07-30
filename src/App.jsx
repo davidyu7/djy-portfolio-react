@@ -14,7 +14,6 @@ import StaticLayout from './static/Layout'
 // List components
 
 // Static components
-import Project from './project/Project'
 
 class App extends React.Component {
 
@@ -24,13 +23,14 @@ class App extends React.Component {
         <NavBar />
         <div className="container">
           <Switch>
-              <Route path= "/projects" component={ListLayout} />
-              <Route path= "/resume" component={StaticLayout} />
-              <Route path= "/about" component={StaticLayout} />
-              <Route path= "/contact" component={StaticLayout} />
-              <Route path= "/">
-                <Redirect to="/projects/experiences" />
-              </Route>
+            <Route path= "/projects" component={ListLayout} />
+            <Route path= "/project/:id" component={StaticLayout} />
+            <Route path= "/resume" component={StaticLayout} />
+            <Route path= "/about" component={StaticLayout} />
+            <Route path= "/contact" component={StaticLayout} />
+            <Route path= "/">
+              <Redirect to="/projects/experiences" />
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>

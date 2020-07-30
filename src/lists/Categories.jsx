@@ -45,7 +45,7 @@ export default function Categories(props) {
                         </NavLink>
                     )}
                 </div>
-                <div className="row project-list">
+                <div className="row main-content-list">
                 <Switch>
                     <Route path="/projects/categories/:id" component={Category} />
                 </Switch>

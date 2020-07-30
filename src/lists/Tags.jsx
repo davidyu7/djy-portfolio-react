@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProjectPreview from '../project/Preview';
-import { Route, Switch, NavLink, useParams } from 'react-router-dom'
+import { Route, NavLink, useParams } from 'react-router-dom'
 
 const API_URL = "http://localhost:3000"
 
@@ -45,7 +45,7 @@ export default function Tags(props) {
                         </NavLink>
                     )}
                 </div>
-                <div className="row project-list">
+                <div className="row main-content-list">
                     <Route path="/projects/tags/:id" component={Tag} />
                 </div>
             </div>
